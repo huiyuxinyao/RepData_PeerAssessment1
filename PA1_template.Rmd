@@ -6,7 +6,6 @@
 
 download the data into working directory and read the file
 ```{r}
-setwd("C:\\Users\\Xinhui\\Desktop\\coursera")
 activitydata<-read.csv("activity.csv")
 ```
   
@@ -109,7 +108,7 @@ str(newdata$ifweekday)
 ```
 
 * Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
-```{r}
+```{r plot4}
 library(reshape2)
 datamelt<-melt(newdata,id=c("ifweekday","interval"),measure.vars=c("steps"))
 dcastdata<-dcast(datamelt,ifweekday+interval~variable,mean)
